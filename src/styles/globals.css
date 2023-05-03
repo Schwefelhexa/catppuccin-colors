@@ -5,3 +5,7 @@
 #__next {
   @apply h-full;
 }
+
+a {
+  @apply underline text-yellow;
+}
