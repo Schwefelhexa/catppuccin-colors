@@ -1,5 +1,6 @@
 import { ColorDefinition } from "@/types/palette"
 import { usePress } from 'react-aria'
+import { motion } from "framer-motion"
 
 interface ColorProps {
   name: string
@@ -12,11 +13,13 @@ export default function Color({ color }: ColorProps) {
 
   return (
     <div className="w-32 h-32">
-      <div
+      <motion.div
         {...pressProps}
         role="button"
-        className="w-full h-full hover:scale-110 transition-transform ease-in-out bg-[--bg] rounded-lg"
+        className="w-full h-full bg-[--bg] rounded-lg focus:outline-none"
         style={{ "--bg": color.hex, "--shadow": `rgba(${color.raw}, 0.5)` }}
+        whileHover={{ scale: 1.1, rotate: -5 }}
+        whileTap={{ scale: 0.9, rotate: 5 }}
       />
     </div>
   )
