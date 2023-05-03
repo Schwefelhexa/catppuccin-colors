@@ -11,7 +11,7 @@ export default function Palette({ name, palette }: PaletteProps) {
   return (
     <div>
       <h2 className="text-3xl md:text-5xl font-medium text-pink mb-4 md:mb-6">{capitalizedName}</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 w-fit">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-10 w-fit">
         {Object.entries(palette).map(([name, color]) => (
           <Color key={name} name={name} color={color} />
         ))}

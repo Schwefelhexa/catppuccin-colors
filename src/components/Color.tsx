@@ -7,10 +7,12 @@ interface ColorProps {
   name: string
   color: ColorDefinition
 }
-export default function Color({ color }: ColorProps) {
+export default function Color({ name, color }: ColorProps) {
   const { pressProps } = usePress({
     onPress: () => navigator.clipboard.writeText(color.hex)
   })
+
+  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1)
 
   return (
     <div className="w-24 h-24 md:w-32 md:h-32">
@@ -22,6 +24,7 @@ export default function Color({ color }: ColorProps) {
         whileHover={{ scale: 1.1, rotate: -5 }}
         whileTap={{ scale: 0.9, rotate: 5 }}
       />
+      <p className="text-text text-center">{capitalizedName}</p>
     </div>
   )
 }
