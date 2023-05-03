@@ -6,11 +6,13 @@ const palette = paletteRaw as AllPalettes
 
 export default function Home() {
   return (
-    <main className="h-full bg-base">
-      {paletteNames.map(name => (
-        <Palette key={name} name={name} palette={palette[name]} />
-      ))
-      }
+    <main className="h-full overflow-scroll px-8 py-6">
+
+      <div className="flex flex-col items-center gap-16">
+        {paletteNames.map(name => (
+          <Palette key={name} name={name} palette={palette[name]} />
+        ))}
+      </div>
     </main>
   )
 }

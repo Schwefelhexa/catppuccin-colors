@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
-      <body className="frappe h-full">
+      <body className="frappe h-full bg-base">
         <Main />
         <NextScript />
       </body>
