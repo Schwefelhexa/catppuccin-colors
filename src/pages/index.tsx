@@ -1,9 +1,16 @@
-import palette from '@/palette.json'
+import Palette from '@/components/Palette'
+import paletteRaw from '@/palette.json'
+import { AllPalettes, paletteNames } from '@/types/palette'
+
+const palette = paletteRaw as AllPalettes
 
 export default function Home() {
   return (
-    <main className="bg-surface1">
-      <p className="text-text">{JSON.stringify(palette)}</p>
+    <main className="h-full bg-base">
+      {paletteNames.map(name => (
+        <Palette key={name} name={name} palette={palette[name]} />
+      ))
+      }
     </main>
   )
 }
