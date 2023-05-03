@@ -12,7 +12,7 @@ export default function Color({ color }: ColorProps) {
   })
 
   return (
-    <div className="w-32 h-32">
+    <div className="w-24 h-24 md:w-32 md:h-32">
       <motion.div
         {...pressProps}
         role="button"
